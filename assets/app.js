@@ -24,7 +24,7 @@ $("button").on("click", function () {
                 var rating = topics[i].rating;
                 var p = $("<p>").text("Rating: " + rating);
                 var tvImage = $("<img>");
-                tvImage.attr("src", topics[i].images.original_still.url);
+                tvImage.attr("src", topics[i].images.fixed_height.url);
                 tvImage.attr("data-gif", topics[i].images.fixed_height.url);
                 console.log(topics);
                 gifDiv.prepend(p);
@@ -32,11 +32,6 @@ $("button").on("click", function () {
 
                 $("#gifShow").prepend(gifDiv);
             }
-
-            // add the pause button using jQuery plugin - have to nest it in this function so it attaches
-            $('.item').gifplayer();
-
-        });
 
 });
 
@@ -54,3 +49,4 @@ function addButton() {
         $("#giphy-input").val("");
     });
 }
+})
